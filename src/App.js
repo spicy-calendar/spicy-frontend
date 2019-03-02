@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <header className="App-header">
-          <text>SMART CALENDAR</text>
+          <h3>SMART CALENDAR</h3>
         </header>
         <Login/>
       </div>
