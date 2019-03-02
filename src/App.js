@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from "./containers/Login";
 import Calendar from './containers/Calendar';
+import EventCards from './components/EventCard';
 
 class App extends Component {
   render() {

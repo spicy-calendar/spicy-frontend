@@ -1,6 +1,25 @@
 import React from 'react';
 import SplitterLayout from 'react-splitter-layout';
-// import Lorem from './Lorem';
+import { Card } from 'react-bootstrap';
+import EventCard from '../components/EventCard';
+
+let cards = [
+  {
+    title: "Hi",
+    body: "1",
+    img: "btt"
+  },
+  {
+    title: "Hi2",
+    body: "2",
+    img: "btt"
+  },
+  {
+    title: "Hi3",
+    body: "13",
+    img: "bt"
+  }
+]
 
 export default function() {
   return (
@@ -18,16 +37,10 @@ export default function() {
         {/* <Lorem title="1st Pane" /> */}
       </div>
       <div className="my-pane">
-        <h2>2nd Pane</h2>
-        <p>This is the 2nd pane, and this is the secondary pane by default.</p>
-        <p>Try to resize the window and see how size changes.</p>
-        <pre>
-          &lt;SplitterLayout primaryIndex={'{0}'} percentage&gt;{'\n'}
-          &nbsp;&nbsp;&lt;div&gt;1st&lt;/div&gt;{'\n'}
-          &nbsp;&nbsp;<strong>&lt;div&gt;2nd&lt;/div&gt;</strong>{'\n'}
-          &lt;/SplitterLayout&gt;
-        </pre>
-        {/* <Lorem title="2nd Pane" /> */}
+      {
+        cards.map(card => <EventCard img={card.img} title={card.title} body={card.body}></EventCard>)
+      }
+        
       </div>
     </SplitterLayout>
   );
