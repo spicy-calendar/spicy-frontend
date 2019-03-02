@@ -12,7 +12,8 @@ class App extends Component {
         <header className="App-header">
           <h3>SMART CALENDAR</h3>
         </header>
-        <Calendar/>
+        {/* <Calendar/> */}
+        <Login/>
       </div>
     );
   }
