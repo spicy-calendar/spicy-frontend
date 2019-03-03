@@ -4,6 +4,7 @@ import './App.css';
 import Login from "./containers/Login";
 import Calendar from './containers/Calendar';
 import EventCards from './components/EventCard';
+import MainView from './containers/MainView';
 
 class App extends Component {
   render() {
@@ -12,8 +13,8 @@ class App extends Component {
         <header className="App-header">
           <h3>SMART CALENDAR</h3>
         </header>
-        <Calendar/>
-        <Login/>
+        <MainView/>
+        {/* <Login/> */}
       </div>
     );
   }

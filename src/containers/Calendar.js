@@ -21,26 +21,51 @@ class MyCalendar extends Component {
   };
 
   onEventResize = (type, { event, start, end, allDay }) => {
-    this.setState(state => {
-      state.events[0].start = start;
-      state.events[0].end = end;
-      return { events: state.events };
-    });
+    // this.setState(state => {
+    //   state.events[0].start = start;
+    //   state.events[0].end = end;
+    //   return { events: state.events };
+    // });
+    for(let i = 0; i < this.state.events.length; i++){
+        if(this.state.events[i] === event) {
+            this.setState(state => {
+                const newEvent = {
+                    start,
+                    end,
+                    title: event.title
+                }
+                return {
+                    events: [...state.events.slice(0, i), newEvent, ...state.events.slice(i+1)]
+                }
+            });
+            break;
+        }
+    }
   };
 
   onEventDrop = ({ event, start, end, allDay }) => {
-    console.log(start);
+    for(let i = 0; i < this.state.events.length; i++){
+        if(this.state.events[i] === event) {
+            this.setState(state => {
+                const newEvent = {
+                    start,
+                    end,
+                    title: event.title
+                }
+                return {
+                    events: [...state.events.slice(0, i), newEvent, ...state.events.slice(i+1)]
+                }
+            });
+            break;
+        }
+    }
+
+    console.log(this.state);
   };
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <DnDCalendar
           defaultDate={new Date()}
           defaultView="month"
