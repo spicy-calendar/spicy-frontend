@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./Login.css";
+import axios from "axios";
+import ReactDOM from 'react-dom';
+import GoogleLogin from 'react-google-login';
 
 export default class Login extends Component {
   constructor(props) {
@@ -26,11 +29,23 @@ export default class Login extends Component {
     event.preventDefault();
   }
 
+  responseGoogle = (response) => {
+    console.log(response);
+    console.log(response.accessToken);
+    axios.post('http://localhost:3000/create', {
+      access_token: response.accessToken
+    })
+    .catch(function (error) {
+      console.log("ERROR with sending access token to backend!!!!!!!!");
+    });
+  }
+
+
   render() {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
+          <FormGroup controlId="email">
             <h3>Email</h3>
             <FormControl
               autoFocus
@@ -39,7 +54,7 @@ export default class Login extends Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
+          <FormGroup controlId="password">
             <h3>Password</h3>
             <FormControl
               value={this.state.password}
@@ -48,13 +63,19 @@ export default class Login extends Component {
             />
           </FormGroup>
           <Button
-            block
-            bsSize="large"
             disabled={this.validateForm()}
             type="submit"
           >
             Login
           </Button>
+          <GoogleLogin
+            clientId="652179531177-a4udujvphg18v38brfdudna5pn0khi71.apps.googleusercontent.com"
+            buttonText="Login"
+            responseType='token'
+            scope={"https://www.googleapis.com/auth/calendar","https://www.googleapis.com/auth/calendar.events"}
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+          />
         </form>
       </div>
     );

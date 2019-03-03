@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-google-login": "^5.0.2",
     "react-scripts": "2.1.5",
     "react-splitter-layout": "^3.0.1"
   },
