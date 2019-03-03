@@ -1,16 +1,34 @@
 import React, { Component } from "react";
 import { Card, Button } from 'react-bootstrap';
+import axios from 'axios';
 
-const EventTab = (props) => (
-  <Card style={{ width: '100rem' }}>
-    <Card.Img variant="top" src={props.img} />
-    <Card.Body>
-      <Card.Title>{props.title}</Card.Title>
-      <Card.Text> {props.body}</Card.Text>
-      <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-  </Card>
-)
+class EventTab extends Component{
+  constructor(props){
+    super(props);
+    
+    this.state = {
+      events: []
+    }
+  }
+
+  async componentDidMount() {
+    const events = await axios.get('localhost:3000/get-daily-events');
+    this.setState({events});
+  }
+
+  render(){
+    return (
+      <Card style={{ width: '100rem' }}>
+      <Card.Img variant="top" src={props.img} />
+      <Card.Body>
+        <Card.Title>{props.title}</Card.Title>
+        <Card.Text> {props.body}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    )
+  }
+}
 
 export default EventTab;
 
