@@ -1,7 +1,7 @@
 import React from 'react';
 import SplitterLayout from 'react-splitter-layout';
 import { Card } from 'react-bootstrap';
-import EventCard from '../components/EventCard';
+import EventTab from '../components/EventTab';
 import Calendar from './Calendar';
 
 let cards = [
@@ -30,7 +30,7 @@ export default function() {
       </div>
       <div className="my-pane">
       {
-        cards.map(card => <EventCard img={card.img} title={card.title} body={card.body}></EventCard>)
+        cards.map(card => <EventTab img={card.img} title={card.title} body={card.body}></EventTab>)
       }
         
       </div>
