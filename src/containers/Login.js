@@ -1,33 +1,36 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import MainView from "./MainView";
 import "./Login.css";
 import axios from "axios";
 import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
 
+
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
+        this.state = {
+            email: "",
+            password: ""
+        };
+    }
 
-  validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
-  }
+    validateForm() {
+        return this.state.email.length > 0 && this.state.password.length > 0;
+    }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
+    handleChange = event => {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
 
-  handleSubmit = event => {
-    event.preventDefault();
-  }
+    handleSubmit = event => {
+        event.preventDefault();
+    }
 
   responseGoogle = (response) => {
     console.log(response);
