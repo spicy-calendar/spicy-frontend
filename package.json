@@ -3,22 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
-=======
     "history": "^4.7.2",
     "moment": "^2.24.0",
->>>>>>> master
     "react": "^16.8.3",
     "react-big-calendar": "^0.20.3",
     "react-dom": "^16.8.3",
-<<<<<<< HEAD
     "react-google-login": "^5.0.2",
-=======
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
->>>>>>> master
     "react-scripts": "2.1.5",
     "react-splitter-layout": "^3.0.1"
   },

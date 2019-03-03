@@ -6,6 +6,7 @@ import "./Login.css";
 import axios from "axios";
 import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
+import { history } from '../routers/AppRouter';
 
 
 export default class Login extends Component {
@@ -37,10 +38,14 @@ export default class Login extends Component {
     console.log(response.accessToken);
     axios.post('http://localhost:3005/connect-calendar', {
       access_token: response.accessToken
-    })
-    .catch(function (error) {
+    }).then(response =>{
+      //if TRUE, ROUTE" !!!!!
+      console.log("hello");
+      history.push('/MainView');
+      console.log(response.data.message);
+    }).catch(function (error) {
       console.log("ERROR with sending access token to backend!!!!!!!!");
-      //console.log(error);
+      console.log(error);
     });
   }
 
