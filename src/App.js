@@ -5,7 +5,6 @@ import Login from "./containers/Login";
 import Calendar from './containers/Calendar';
 import EventCards from './components/EventCard';
 import MainView from './containers/MainView';
-import AuthRoute from './containers/AuthRoute';
 
 import AppRouter from './routers/AppRouter';
 
