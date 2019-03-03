@@ -32,14 +32,14 @@ export default class Login extends Component {
   responseGoogle = (response) => {
     console.log(response);
     console.log(response.accessToken);
-    axios.post('http://localhost:3000/create', {
+    axios.post('http://localhost:3005/connect-calendar', {
       access_token: response.accessToken
     })
     .catch(function (error) {
       console.log("ERROR with sending access token to backend!!!!!!!!");
+      //console.log(error);
     });
   }
-
 
   render() {
     return (
