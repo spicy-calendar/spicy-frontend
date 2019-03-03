@@ -13,16 +13,17 @@ class EventTab extends Component{
 
   async componentDidMount() {
     const events = await axios.get('localhost:3000/get-daily-events');
+    console.log("########front");
     this.setState({events});
   }
 
   render(){
     return (
       <Card style={{ width: '100rem' }}>
-      <Card.Img variant="top" src={props.img} />
+      <Card.Img variant="top" src={this.props.img} />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text> {props.body}</Card.Text>
+        <Card.Title>{this.props.title}</Card.Title>npm 
+        <Card.Text> {this.props.body}</Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>

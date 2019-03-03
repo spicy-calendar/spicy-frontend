@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import MainView from "./MainView";
 import "./Login.css";
 import axios from "axios";
-import ReactDOM from 'react-dom';
+import { history } from '../routers/AppRouter';
 import GoogleLogin from 'react-google-login';
 
 
@@ -30,6 +30,8 @@ export default class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+
+        history.push('/MainView');
     }
 
   responseGoogle = (response) => {
