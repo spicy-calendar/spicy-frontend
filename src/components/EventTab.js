@@ -13,6 +13,7 @@ class EventTab extends Component{
 
   async componentDidMount() {
     const events = await axios.get('localhost:3000/get-daily-events');
+    console.log("########front");
     this.setState({events});
   }
 
@@ -24,6 +25,7 @@ class EventTab extends Component{
         <Card.Title>{this.props.title}</Card.Title>
         <Card.Text> {this.props.body}</Card.Text>
         <Button variant="primary">Invite Friends</Button>
+
       </Card.Body>
     </Card>
     )
