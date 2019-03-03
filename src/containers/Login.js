@@ -50,9 +50,9 @@ export default class Login extends Component {
                             type="password"
                         />
                     </FormGroup>
-                    <NavLink to="/MainView">Login</NavLink>
-
-
+                    
+                    <NavLink to="/MainView"><Button>Login</Button></NavLink>
+                    
                 </form>
             </div>
         );
