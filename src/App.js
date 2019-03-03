@@ -5,6 +5,9 @@ import Login from "./containers/Login";
 import Calendar from './containers/Calendar';
 import EventCards from './components/EventCard';
 import MainView from './containers/MainView';
+import AuthRoute from './containers/AuthRoute';
+
+import AppRouter from './routers/AppRouter';
 
 class App extends Component {
   render() {
@@ -13,8 +16,7 @@ class App extends Component {
         <header className="App-header">
           <h3>SMART CALENDAR</h3>
         </header>
-        <MainView/>
-        {/* <Login/> */}
+        <AppRouter/>
       </div>
     );
   }

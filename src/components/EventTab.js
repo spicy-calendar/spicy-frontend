@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card, Button } from 'react-bootstrap';
 
 const EventTab = (props) => (
-  <Card style={{ width: '18rem' }}>
+  <Card style={{ width: '100rem' }}>
     <Card.Img variant="top" src={props.img} />
     <Card.Body>
       <Card.Title>{props.title}</Card.Title>

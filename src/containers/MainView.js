@@ -28,11 +28,11 @@ export default function() {
       <div className="my-pane">
         <Calendar/>
       </div>
+
       <div className="my-pane">
       {
         cards.map(card => <EventTab img={card.img} title={card.title} body={card.body}></EventTab>)
       }
-        
       </div>
     </SplitterLayout>
   );
